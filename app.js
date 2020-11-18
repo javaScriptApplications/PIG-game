@@ -50,11 +50,13 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
    //update the score
     scores[activePlayer] += roundScore;
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-    document.querySelector('.dice').style.display = 'none';
     
  // Check if won
     if(scores[activePlayer] >= 20){
         document.querySelector('#name-'+activePlayer).textContent = "Winner!";
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' +activePlayer+ '-panel').classList.add('winner');
+        document.querySelector('.player-' +activePlayer+ '-panel').classList.remove('active');
     } else {
        nextPlayer(); 
     }   
