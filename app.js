@@ -1,4 +1,4 @@
-var activePlayer, roundScore, scores,gamePlaying;
+var activePlayer, roundScore, scores,gamePlaying,name1,name2;
 init();
 
 //Event listener for a roll button
@@ -55,14 +55,17 @@ function init(){
     scores = [0,0];
     gamePlaying = true;
     
+    name1 = prompt("Enter player 1 name");
+    name2 = prompt("enter player2 name");
+    
     document.querySelector('#msg').style.display = 'none';
     document.querySelector('.dice').style.display = 'none';
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
-    document.getElementById('name-0').textContent = 'Player 1';
-    document.getElementById('name-1').textContent = 'Player 2';
+    document.getElementById('name-0').textContent = name1;
+    document.getElementById('name-1').textContent = name2;
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.remove('active');
