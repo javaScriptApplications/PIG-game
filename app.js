@@ -3,6 +3,7 @@ init();
 
 //Event listener for a roll button
 document.querySelector('.btn-roll').addEventListener('click', function() {
+    document.querySelector('#msg').style.display = 'none';
     if(gamePlaying){
         //1. Roll the dice
         var dice = Math.floor(Math.random() * 6) + 1;
@@ -19,6 +20,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
             // Change player
+            document.querySelector('#msg').style.display = 'block';
             nextPlayer();
         }
     }
@@ -53,6 +55,7 @@ function init(){
     scores = [0,0];
     gamePlaying = true;
     
+    document.querySelector('#msg').style.display = 'none';
     document.querySelector('.dice').style.display = 'none';
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
